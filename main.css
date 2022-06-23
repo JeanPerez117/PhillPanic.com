@@ -1,0 +1,43 @@
+body 	{
+		background-image: url("background.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: #464646;
+		}
+
+footer  {
+
+		text-align: center;
+		padding: 1.5px;
+		background-color: #212529;
+		bottom: 0px;
+		position: fixed;
+		color: white;
+		width: 100%;
+
+		}
+
+.Welcome	{
+			position: absolute;
+  			top: 25%;
+		  	text-align: center;
+			padding: 3px;
+			background-color: white;
+			width: 50%;
+			border-radius: 25px;
+			left: 25%;
+
+			}
+
+.About 		{
+			position: absolute;
+  			top: 25%;
+		  	text-align: center;
+			padding: 3px;
+			background-color: white;
+			width: 50%;
+			border-radius: 25px;
+			left: 25%;
+
+			}
