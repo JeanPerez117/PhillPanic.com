@@ -45,13 +45,15 @@
 			$_SESSION['loggedIn'] = true;
 			$_SESSION['user'] = $username;
 			echo '<script type="text/JavaScript"> alert("you are logged in!"); </script>';
-
+			
 
 		}
 		else
 		{
 			echo '<script type="text/JavaScript"> alert("Incorrect username/password combination. Please try again."); </script>';
+
 		}
+		mysqli_free_result($result);
 		
 
 
@@ -66,7 +68,7 @@
 
 		if(!filter_var($usermail, FILTER_VALIDATE_EMAIL))
 		{
-			echo "Please use a valid EMAIL";
+			echo '<script type="text/JavaScript"> alert("Please use a valid email."); </script>';
 		}
 
 		else 
@@ -75,13 +77,14 @@
 		
 			if ($_POST['InputPassword'] == $_POST['InputPassword2'])
 			{
+				$stmt = $conn->prepare("SELECT UserMail FROM users Where UserMail=?"); 
+				$stmt->bind_param("s", $usermail);
+				$stmt->execute();
+				$result = $stmt->get_result(); // get the mysqli result
 				
-				$sql = "SELECT UserMail FROM users Where UserMail= $usermail";
-				$result = mysqli_query($conn, $sql);
 
-				if ($result == null)
+				if (mysqli_num_rows($result) == 0)
 				{	
-					echo $_POST['InputEmail'];
 					$userpassword = $_POST['InputPassword'];
 					$userpassword = password_hash($userpassword, PASSWORD_DEFAULT);
 
@@ -89,23 +92,19 @@
 					$stmt->bind_param("ss", $usermail, $userpassword);
 					$stmt->execute();
 
-
-					
-
-					
-					echo $result;
 					$_SESSION['user'] = $usermail;
 					$_SESSION['loggedIn'] = true;
 					$stmt->close();
+					mysqli_free_result($result);
 				}
 				else	
 				{
-				echo "user already exists";
+				echo '<script type="text/JavaScript"> alert("User already exists!"); </script>';
 				}
 			} 
 			else
 			{
-				echo "Your passwords don't match!";
+				echo '<script type="text/JavaScript"> alert("Your passwords dont match! "); </script>';
 			}
 		}
 	}	
