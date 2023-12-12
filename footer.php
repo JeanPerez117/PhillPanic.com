@@ -3,7 +3,7 @@
 
 <body>
 	<footer>
-		<P>Created using LAMP packaged by Bitnami. Hosted on AWS: Amazon Lightsail.</P>
+		<P>Powered by AWS: Amazon Lightsail LAMP stack.</P>
 	</footer>
 </body>
 </html>

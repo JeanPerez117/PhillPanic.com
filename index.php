@@ -32,9 +32,9 @@
 <body>
 
 	<div class="Welcome">
-		<h1>Welcome!</h1>
-		<p>I created this site to be a portfolio of sorts and to show my capabilities as a developer. Please do not use/enter any sensitive or self identifying information on this site. Thank you, PhillPanic</p>
-		<p><a href="login.php">Sign in</a>  or  <a href="register.php">Register</a></p>
+		<h1>Welcome</h1>
+		<p>I created this site to be a portfolio and to show my capabilities as a developer.</p>
+		<p></p>
 	</div>
 
 
@@ -44,19 +44,6 @@
 	<?php include 'footer.php';?>
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="main.css">

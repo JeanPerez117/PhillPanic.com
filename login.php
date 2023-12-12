@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php session_start();?>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,15 +25,15 @@
 
 	<body>
 
-		
-		<form  method="post">
+	<div class="Login">
 
+		<form method="post">
 			<input type="hidden" name="frmLogin">
 
 			<div class="form-group">
 			    <label for="InputEmail">Email address</label>
 			    <input type="email" class="form-control" name="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small>
 			</div>
 
 		  <div class="form-group">
@@ -40,9 +41,12 @@
 		    <input type="password" class="form-control" name="InputPassword" placeholder="Password">
 		  </div>
 
-		  <button type="submit" class="btn btn-primary">Submit</button>
-
+		  <button type="submit" class="btn btn-primary">Login</button>
 		</form>
+
+	</div>
+
+	<?php include 'footer.php';?>
 		
 
 	</body>
